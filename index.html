@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio API Example</title>
+</head>
+<body>
+
+  <h2>Simple Audio Controller</h2>
+
+  <audio id="audio" src="audio.mp3"></audio>
+
+  <br><br>
+
+  <button onclick="playAudio()">Play</button>
+  <button onclick="pauseAudio()">Pause</button>
+  <button onclick="muteAudio()">Mute / Unmute</button>
+
+  <br><br>
+
+  <label>Volume:</label>
+  <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
+
+  <br><br>
+
+  <p>Current Time: <span id="time">0</span> sec</p>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
