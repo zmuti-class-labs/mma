@@ -11,6 +11,7 @@ function pauseAudio() {
 
 function muteAudio() {
   audio.muted = !audio.muted;
+  event.target.textContent = audio.muted ? "Unmute" : "Mute";
 }
 
 function setVolume(value) {
