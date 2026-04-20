@@ -3,27 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <title>Audio API Example</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .player {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      background: #4a90e2;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #357ab8;
+    }
+
+    .controls {
+      margin: 15px 0;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    .time {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h2>Simple Audio Controller</h2>
+  <div class="player">
+    <h2>Audio Player</h2>
 
-  <audio id="audio" src="audio.mp3"></audio>
+    <audio id="audio" src="audio.mp3"></audio>
 
-  <br><br>
+    <div class="controls">
+      <button onclick="playAudio()">Play</button>
+      <button onclick="pauseAudio()">Pause</button>
+      <button onclick="muteAudio()">Mute</button>
+    </div>
 
-  <button onclick="playAudio()">Play</button>
-  <button onclick="pauseAudio()">Pause</button>
-  <button onclick="muteAudio()">Mute / Unmute</button>
+    <label>Volume</label>
+    <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
 
-  <br><br>
-
-  <label>Volume:</label>
-  <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
-
-  <br><br>
-
-  <p>Current Time: <span id="time">0</span> sec</p>
+    <div class="time">
+      Current Time: <span id="time">0</span> sec
+    </div>
+  </div>
 
   <script src="audio.js"></script>
 
